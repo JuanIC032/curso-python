@@ -37,6 +37,7 @@ en todo el recetario es: \n
         continuacion = input('Continuar al menú principal? (y/n)')
 
 def menu_principal():
+    system('cls')
     opcion = ''
 
     while opcion not in ('1','2','3','4','5','6'):
@@ -56,6 +57,7 @@ siguientes opciones:
 
 def elegir_categoria(ruta_inicial):
 
+    system('cls')
     contador = 0
     directorios1 = []
 
@@ -85,6 +87,7 @@ def elegir_categoria(ruta_inicial):
     return ruta_cat
 
 def elegir_receta(ruta_cat):
+    system('cls')
     contador = 0
     recetas = []
 
