@@ -117,9 +117,23 @@ def elegir_receta(ruta_cat):
 
 def opcion1(ruta_inicial):
     ruta_cat = elegir_categoria(ruta_inicial)
+    if ruta_cat is None:
+        return False
+
+
     system('cls')
     receta_eleg = elegir_receta(ruta_cat)
+
+    if receta_eleg is None:
+        print("❌ No hay recetas disponibles en esta categoría.")
+        input("Presiona ENTER para volver al menú...")
+        return False
+
     system('cls')
+
+    with open(receta_eleg, 'r') as receta_abierta:
+        print(receta_abierta.read())
+
     receta_abierta = open(receta_eleg)
     print(receta_abierta.read())
     receta_abierta.close()
